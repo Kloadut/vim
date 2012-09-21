@@ -185,8 +185,21 @@ set viminfo^=%
     cmap w!! w !sudo tee % >/dev/null
 
     " NERDCommenter bind modification
-    map <C-C> <leader>c<space>
-    
+    nmap <S-C> <leader>c<space>
+
+    " Good clipboard management
+    nnoremap <C-C> "+yy
+    inoremap <C-C> "+yy
+    vnoremap <C-C> "+y
+    nnoremap <C-V> "+p
+    inoremap <C-V> <ESC>"+p
+    vnoremap <C-V> "_d"+p
+
+    " Remap Tab, CR & Backspace to activate insert mode
+    nnoremap <Tab> i<Tab>
+    nnoremap <CR> i<CR>
+    nnoremap <BS> i<BS>
+
     " Vimgrep bind
     map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " }
