@@ -1,4 +1,3 @@
-
 set nocompatible        " must be first line
 
 " Windows Compatible {
@@ -199,8 +198,8 @@ set foldenable                  " auto fold code
     "inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 
     " automatically open and close the popup menu / preview window
-    au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-    set completeopt=menu,preview,longest
+    "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+    "set completeopt=menu,preview,longest
 " }
 
 
