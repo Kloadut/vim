@@ -105,6 +105,8 @@ set ruler
 set encoding=utf-8
 set fileencoding=utf-8
 
+filetype plugin on
+
 source ~/.color.vim
 
 if !filewritable($HOME."/.vim/backup") " Si le repertoire n'existe pas
