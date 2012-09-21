@@ -195,10 +195,11 @@ set viminfo^=%
     inoremap <C-V> <ESC>"+p
     vnoremap <C-V> "_d"+p
 
-    " Remap Tab, CR & Backspace to activate insert mode
+    " Remap Tab, CR, Backspace & Del to activate insert mode
     nnoremap <Tab> i<Tab>
     nnoremap <CR> i<CR>
     nnoremap <BS> i<BS>
+    nnoremap <Del> <Del>i
 
     " Vimgrep bind
     map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
