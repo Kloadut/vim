@@ -4,7 +4,7 @@ set nocompatible        " must be first line
 " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
 " across (heterogeneous) systems easier.
     if has('win32') || has('win64')
-        set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+      set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
     endif
 " }
 "
@@ -50,7 +50,7 @@ set nocompatible        " must be first line
         if count(g:spf13_bundle_groups, 'general')
             Bundle 'scrooloose/nerdtree'
             Bundle 'tpope/vim-surround'
-            Bundle 'AutoClose'
+            "Bundle 'AutoClose'
             Bundle 'kien/ctrlp.vim'
             Bundle 'matchit.zip'
             Bundle 'Lokaltog/vim-powerline'
@@ -107,11 +107,16 @@ set fileencoding=utf-8
 
 source ~/.color.vim
 
+if !filewritable($HOME."/.vim/backup") " Si le repertoire n'existe pas
+call mkdir($HOME."/.vim/backup", "p") " Creation du repertoire de sauvegarde
+endif
 set backup                      " backups are nice ...
+set backupdir=~/.vim/backup/
 if has('persistent_undo')
     set undofile                "so is persistent undo ...
+    set undodir=~/.vim/backup/
     set undolevels=1000         "maximum number of changes that can be undone
-    set undoreload=10000        "maximum number lines to save for undo on a buffer reload
+    set undoreload=10000        "maximum number lines to save for undo on a buffer reload   
 endif
 
 set backspace=indent,eol,start  " backspace for dummies
@@ -132,6 +137,8 @@ set scrolloff=3                 " minimum lines to keep above and below cursor
 set foldenable                  " auto fold code
 "set list
 "set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set cursorline
+highlight CursorLine guibg=#000000
 
 " Formatting {
     set nowrap                      " wrap long lines
