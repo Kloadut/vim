@@ -187,7 +187,8 @@ set viminfo^=%
     cmap w!! w !sudo tee % >/dev/null
 
     " NERDCommenter bind modification
-    nmap <S-C> <leader>c<space>
+    nnoremap <S-C> <leader>c<space>
+    vnoremap <S-C> <leader>c<space>
 
     " Good clipboard management
     nnoremap <C-C> "+yy
