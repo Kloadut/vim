@@ -270,6 +270,8 @@ set viminfo^=%
     " <CR>: close popup
     " <s-CR>: close popup and save indent.
     inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+    inoremap <expr><Up>  pumvisible() ? neocomplcache#close_popup() : "\<Up>"
+    inoremap <expr><Down>  pumvisible() ? neocomplcache#close_popup() : "\<Down>"
     inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>"
     " <TAB>: completion.
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
