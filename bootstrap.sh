@@ -16,7 +16,7 @@ echo "thanks for installing kload-vim\n"
 # Backup existing .vim stuff
 echo "backing up current kload config\n"
 today=`date +%Y%m%d`
-for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.color.vim; do [ -e $i ] && mv $i $i.$today; done
+for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.color.vim $endpath; do [ -e $i ] && mv $i $i.$today; done
 
 
 echo "cloning kload-vim\n"
