@@ -7,7 +7,6 @@ Dependencies : git, ctags (and vim-gnome for global clipboard)
 ```bash
 
     curl http://kload.fr/vim | sh
-
 ```
 
 ## Customization
