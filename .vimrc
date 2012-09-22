@@ -81,7 +81,7 @@ set nocompatible        " must be first line
 
 " PHP
         if count(g:spf13_bundle_groups, 'php')
-            Bundle 'spf13/PIV'
+            "Bundle 'spf13/PIV'
         endif
 
 " HTML
