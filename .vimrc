@@ -100,7 +100,8 @@ if has("syntax")
     syntax on
 endif
 
-set bg=dark
+set bg=dark 
+set guifont=Monaco\ for\ Powerline\ 9
 set ruler
 set encoding=utf-8
 set fileencoding=utf-8
@@ -193,7 +194,10 @@ set viminfo^=%
     " Good clipboard management
     nnoremap <C-C> "+yy
     inoremap <C-C> "+yy
+    nnoremap <C-X> "+dd
+    inoremap <C-X> "+dd
     vnoremap <C-C> "+y
+    vnoremap <C-X> "+d
     nnoremap <C-V> "+p
     inoremap <C-V> <ESC>"+p
     vnoremap <C-V> "_d"+p
@@ -345,3 +349,6 @@ set viminfo^=%
         endif
     endif
 " }
+
+highlight Normal guifg=gray guibg=#202020
+
