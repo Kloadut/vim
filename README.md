@@ -2,7 +2,7 @@
 
 ## Linux, \*nix, Mac OSX Installation
 
-Dependencies : git, ctags
+Dependencies : git, ctags (and vim-gnome for global clipboard)
 
 ```bash
 
