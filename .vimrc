@@ -50,7 +50,7 @@ set nocompatible        " must be first line
         if count(g:spf13_bundle_groups, 'general')
             Bundle 'scrooloose/nerdtree'
             Bundle 'tpope/vim-surround'
-            "Bundle 'AutoClose'
+            "Bundle 'AutoClose' "Make some bugs
             Bundle 'kien/ctrlp.vim'
             Bundle 'matchit.zip'
             Bundle 'Lokaltog/vim-powerline'
@@ -63,6 +63,8 @@ set nocompatible        " must be first line
         if count(g:spf13_bundle_groups, 'programming')
 " Pick one of the checksyntax, jslint, or syntastic
             Bundle 'scrooloose/syntastic'
+            Bundle 'garbas/vim-snipmate'
+            Bundle 'spf13/snipmate-snippets'
 " Source support_function.vim to support snipmate-snippets.
             if filereadable(expand("~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim"))
                 source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
@@ -351,4 +353,5 @@ set viminfo^=%
 " }
 
 highlight Normal guifg=gray guibg=#202020
-
+set guioptions=
+set guioptions+=r
