@@ -208,7 +208,7 @@ set viminfo^=%
     nnoremap <Tab> i<Tab>
     nnoremap <CR> i<CR>
     nnoremap <BS> i<BS>
-    nnoremap <Del> <Del>i
+    nnoremap <Del> <Del>i<Right>
 
     " Vimgrep bind
     map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
@@ -353,5 +353,4 @@ set viminfo^=%
 " }
 
 highlight Normal guifg=gray guibg=#202020
-set guioptions=
-set guioptions+=r
+set guioptions=rm
