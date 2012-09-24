@@ -154,7 +154,7 @@ autocmd BufReadPost *
 set viminfo^=%
 
 " Formatting {
-    set nowrap                      " wrap long lines
+    set wrap                      " wrap long lines
     set autoindent                  " indent at the same level of the previous line
     set shiftwidth=4                " use indents of 4 spaces
     set expandtab                   " tabs are spaces, not tabs
@@ -174,8 +174,9 @@ set viminfo^=%
     "location
     let mapleader = ','
 
-    " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
-    nnoremap ; :
+    " Map Ctrl-Arrow
+    map Oa <C-Up>
+    map Ob <C-Down>
 
     " Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
@@ -189,26 +190,37 @@ set viminfo^=%
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
 
-    " NERDCommenter bind modification
-    nmap <S-C> <leader>c<space>
-    vmap <S-C> <leader>c<space>
-
     " Good clipboard management
     nnoremap <C-C> "+yy
-    inoremap <C-C> "+yy
+    inoremap <C-C> <ESC>"+yy
     nnoremap <C-X> "+dd
-    inoremap <C-X> "+dd
+    inoremap <C-X> <ESC>"+dd
     vnoremap <C-C> "+y
     vnoremap <C-X> "+d
     nnoremap <C-V> "+p
     inoremap <C-V> <ESC>"+p
     vnoremap <C-V> "_d"+p
 
+    " NERDCommenter bind modification
+    nmap <S-X> <leader>c<space>
+    vmap <S-X> <leader>c<space>
+
+    " Full stack
+    nnoremap <C-Up> <C-W>k<C-W>_zz
+    nnoremap <C-Down> <C-W>j<C-W>_zz
+
+    " Auto Indent
+    nnoremap <Leader>= magg=G`azzOa
+    
+    " HL search toggle (broken)
+    nmap <Silent><Leader>* :set hlsearch! hlsearch?<CR>
+
     " Remap Tab, CR, Backspace & Del to activate insert mode
     nnoremap <Tab> i<Tab>
     nnoremap <CR> i<CR>
     nnoremap <BS> i<BS>
     nnoremap <Del> <Del>i<Right>
+    nnoremap <Space> i<Space>
 
     " Vimgrep bind
     map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
