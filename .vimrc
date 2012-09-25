@@ -197,9 +197,9 @@ set viminfo^=%
     inoremap <C-X> <ESC>"+dd
     vnoremap <C-C> "+y
     vnoremap <C-X> "+d
-    nnoremap <C-V> "+p
-    inoremap <C-V> <ESC>"+p
-    vnoremap <C-V> "_d"+p
+    nnoremap <C-V> "+P
+    inoremap <C-V> <ESC>"+P
+    vnoremap <C-V> "_d"+P
 
     " NERDCommenter bind modification
     nmap <S-X> <leader>c<space>
@@ -216,7 +216,6 @@ set viminfo^=%
     nmap <Silent><Leader>* :set hlsearch! hlsearch?<CR>
 
     " Remap Tab, CR, Backspace & Del to activate insert mode
-    nnoremap <Tab> i<Tab>
     nnoremap <CR> i<CR>
     nnoremap <BS> i<BS>
     nnoremap <Del> <Del>i<Right>
@@ -303,19 +302,19 @@ set viminfo^=%
 
 
     " <CR>: close popup
-    " <s-CR>: close popup and save indent.
+    " <s-CR>: close popup and save indent. 
     inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
     inoremap <expr><Up>  pumvisible() ? neocomplcache#close_popup() : "\<Up>"
     inoremap <expr><Down>  pumvisible() ? neocomplcache#close_popup() : "\<Down>"
     inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>"
-    " <TAB>: completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    " Up & Down completion.
+    inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>"
+    inoremap <expr><Up>  pumvisible() ? "\<C-p>" : "\<Up>"
 
 	" <C-h>, <BS>: close popup and delete backword char.
     inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
     inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y>  neocomplcache#close_popup()
-    inoremap <expr><C-e>  neocomplcache#cancel_popup()
+    inoremap <expr><C-y>  neocomplcache#cancel_popup()
 
     " Enable omni completion.
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
