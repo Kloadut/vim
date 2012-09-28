@@ -71,6 +71,7 @@ set nocompatible        " must be first line
             endif
 
             Bundle 'tpope/vim-fugitive'
+            Bundle 'joonty/vdebug'
             Bundle 'scrooloose/nerdcommenter'
             Bundle 'godlygeek/tabular'
             if executable('ctags')
@@ -103,7 +104,7 @@ if has("syntax")
 endif
 
 set bg=dark 
-set guifont=Monaco\ for\ Powerline\ 9
+set guifont=Ubuntu\ Mono\ 11
 set ruler
 set encoding=utf-8
 set fileencoding=utf-8
