@@ -20,7 +20,7 @@ for i in $HOME/.vim $HOME/.vimrc $endpath; do [ -e $i ] && mv $i $i.$today; done
 
 
 echo "cloning kload-vim\n"
-mkdir -p $endpath/colors/
+mkdir -p $endpath/.vim/colors/
 wget -O $endpath/.vimrc https://raw.github.com/Kloadut/vim/mini/.vimrc
 wget -O $endpath/.vim/colors/Tomorrow-Night.vim https://raw.github.com/Kloadut/vim/mini/.vim/colors/Tomorrow-Night.vim
 wget -O $endpath/.vim/colors/molokai.vim https://raw.github.com/Kloadut/vim/mini/.vim/colors/molokai.vim
