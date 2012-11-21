@@ -1,4 +1,6 @@
 set nocompatible
+syntax on
+filetype indent plugin on
 
 if !filewritable($HOME."/.vim/backup")    " if backup directory doesn't exists yet                                                 
     call mkdir($HOME."/.vim/backup", "p") " create it
@@ -62,23 +64,11 @@ set guioptions=rm
 
 " Load Tomorrow-Night colorscheme if exists, and check if 256colors term
 if &t_Co > 2
-    if &term =~ "256"
-        set bg=dark t_Co=256 vb
-        let &t_vb="\<Esc>[?5h\<Esc>[?5l"    " flash screen for visual bell
-        if filereadable(expand("$VIMRUNTIME/colors/Tomorrow-Night.vim"))
-            colorscheme Tomorrow-Night
-        elseif filereadable(expand("$HOME/.vim/colors/Tomorrow-Night.vim"))
-            colorscheme Tomorrow-Night
-        else
-            colorscheme default
-        endif
-        filetype indent plugin on
-        syntax on
+    if filereadable(expand("$VIMRUNTIME/colors/Tomorrow-Night.vim"))
+        colorscheme Tomorrow-Night
+    elseif filereadable(expand("$HOME/.vim/colors/Tomorrow-Night.vim"))
+        colorscheme Tomorrow-Night
     else
-        " things like cfdisk, crontab -e, visudo, vless, etc.
-        set term=linux
-        set t_Co=8
-        syntax off
-        filetype indent plugin off
+        colorscheme default
     endif
 endif
