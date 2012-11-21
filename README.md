@@ -6,5 +6,5 @@ Dependencies : curl, wget
 
 ```bash
 
-    curl http://kload.fr/vim | sh
+    curl https://raw.github.com/Kloadut/vim/mini/bootstrap.sh | sh
 ```
