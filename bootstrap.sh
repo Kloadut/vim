@@ -16,18 +16,14 @@ echo "thanks for installing kload-vim\n"
 # Backup existing .vim stuff
 echo "backing up current kload config\n"
 today=`date +%Y%m%d`
-for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.color.vim $endpath; do [ -e $i ] && mv $i $i.$today; done
+for i in $HOME/.vim $HOME/.vimrc $endpath; do [ -e $i ] && mv $i $i.$today; done
 
 
 echo "cloning kload-vim\n"
-git clone --recursive -b 3.0 http://github.com/Kloadut/vim.git $endpath
-mkdir -p $endpath/.vim/bundle
+git clone --recursive -b minimal http://github.com/Kloadut/vim.git $endpath
+wget -O $endpath/.vimrc https://raw.github.com/Kloadut/vim/mini/.vimrc
+wget -O $endpath/.vim/colors/Tomorrow-Night.vim https://raw.github.com/Kloadut/vim/mini/.vim/colors/Tomorrow-Night.vim
+wget -O $endpath/.vim/colors/molokai.vim https://raw.github.com/Kloadut/vim/mini/.vim/colors/molokai.vim
 ln -s $endpath/.vimrc $HOME/.vimrc
 ln -s $endpath/.vim $HOME/.vim
-ln -s $endpath/.color.vim $HOME/.color.vim
 
-echo "Installing Vundle"
-git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
-
-echo "installing plugins using Vundle"
-vim +BundleInstall! +BundleClean +qall
