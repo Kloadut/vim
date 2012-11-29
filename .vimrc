@@ -88,9 +88,9 @@ set pastetoggle=<F2>            " Toggle paste-mode
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 
 " Remember info about open buffers on close
 set viminfo^=%
@@ -109,7 +109,7 @@ map <F4> <ESC>:GundoToggle<CR>
 " Gvim options
 highlight Normal guifg=gray guibg=#202020
 set guioptions=rm
-"set cursorline
+set cursorline
 
 " MISC
 " {
