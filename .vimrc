@@ -88,9 +88,9 @@ set pastetoggle=<F2>            " Toggle paste-mode
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 
 " Remember info about open buffers on close
 set viminfo^=%
@@ -115,5 +115,5 @@ set guioptions=rm
 " {
 " Every spaces/tabs at the end of line will be highlighted.
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\s\+$', -1)
-" autocmd BufWrite * silent! %s/[\r \t]\+$//
+map <F5> <ESC>:%s/\s*$//<CR>
 " }
