@@ -27,3 +27,9 @@ wget -O $endpath/.vim/colors/molokai.vim https://raw.github.com/Kloadut/vim/mini
 ln -s $endpath/.vimrc $HOME/.vimrc
 ln -s $endpath/.vim $HOME/.vim
 
+echo "vundle install\n"
+mkdir -p $endpath/.vim/bundle
+git clone https://github.com/gmarik/vundle.git $endpath/.vim/bundle/vundle
+cd $endpath/.vim/bundle/vundle
+vim +BundleInstall +qall
+
