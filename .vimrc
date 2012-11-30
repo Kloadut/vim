@@ -27,6 +27,8 @@ if filereadable(expand("$HOME/.vim/bundle/vundle/README.md"))
     Bundle 'The-NERD-tree'
     Bundle 'The-NERD-Commenter'
     Bundle 'closetag.vim'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'Lokaltog/vim-powerline'
 endif
 " }
 
@@ -116,4 +118,13 @@ set cursorline
 " Every spaces/tabs at the end of line will be highlighted.
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\s\+$', -1)
 map <F5> <ESC>:%s/\s*$//<CR>
+" }
+
+" ctrlp {
+    let g:ctrlp_working_path_mode = 2
+    nnoremap <silent> <D-t> :CtrlP<CR>
+    nnoremap <silent> <D-r> :CtrlPMRU<CR>
+    let g:ctrlp_custom_ignore = {
+        \ 'dir': '\.git$\|\.hg$\|\.svn$',
+        \ 'file': '\.exe$\|\.so$\|\.dll$' }
 " }
