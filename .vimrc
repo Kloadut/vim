@@ -23,12 +23,12 @@ if filereadable(expand("$HOME/.vim/bundle/vundle/README.md"))
     Bundle "tomtom/tlib_vim"
     Bundle "honza/snipmate-snippets"
 
-    "Bundle 'Gundo'
-    "Bundle 'The-NERD-tree'
-    "Bundle 'The-NERD-Commenter'
-    "Bundle 'closetag.vim'
-    "Bundle 'kien/ctrlp.vim'
-    "Bundle 'Lokaltog/vim-powerline'
+    Bundle 'Gundo'
+    Bundle 'The-NERD-tree'
+    Bundle 'The-NERD-Commenter'
+    Bundle 'closetag.vim'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'Lokaltog/vim-powerline'
 endif
 " }
 
