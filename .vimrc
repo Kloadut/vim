@@ -23,12 +23,12 @@ if filereadable(expand("$HOME/.vim/bundle/vundle/README.md"))
     Bundle "tomtom/tlib_vim"
     Bundle "honza/snipmate-snippets"
 
-    Bundle 'Gundo'
-    Bundle 'The-NERD-tree'
-    Bundle 'The-NERD-Commenter'
-    Bundle 'closetag.vim'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'Lokaltog/vim-powerline'
+    "Bundle 'Gundo'
+    "Bundle 'The-NERD-tree'
+    "Bundle 'The-NERD-Commenter'
+    "Bundle 'closetag.vim'
+    "Bundle 'kien/ctrlp.vim'
+    "Bundle 'Lokaltog/vim-powerline'
 endif
 " }
 
@@ -88,6 +88,9 @@ set softtabstop=4               " let backspace delete indent
 set ttyfast                     " force redraw of the terminal emulator instead of scrolling
 set pastetoggle=<F2>            " Toggle paste-mode
 
+" Map leader
+let mapleader = ','
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -105,8 +108,12 @@ nmap <C-Up> <C-W>k<C-W>_zz
 nmap <C-Down> <C-W>j<C-W>_zz
 
 " Easy access toggle
-map <F3> <ESC>:NERDTreeToggle<CR>
-map <F4> <ESC>:GundoToggle<CR>
+map <leader>a <ESC>:NERDTreeToggle<CR>
+map <leader>z <ESC>:GundoToggle<CR>
+
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
 
 " Gvim options
 highlight Normal guifg=gray guibg=#202020
